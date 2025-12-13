@@ -17,7 +17,7 @@ const Contact = () => {
                     <ScrambleText text="// Channels of communication" />
                 </p>
                 <p style={{ fontSize: '1.5rem', color: 'var(--text-secondary)', marginBottom: '3rem', textAlign: 'center' }}>
-                    Open to opportunities in System Design, HPC, and Quantum Computing.
+                    Open to opportunities in System Design, HPC, and Cryptography.
                 </p>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
