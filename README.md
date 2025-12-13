@@ -1,5 +1,7 @@
 # Sai Kaushik Sudhakaran - Portfolio
 
+[![Deploy to GitHub Pages](https://github.com/sai-kaushik-s/sai-kaushik-s.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/sai-kaushik-s/sai-kaushik-s.github.io/actions/workflows/deploy.yml)
+
 A modern, high-performance portfolio website built with **React** and **Vite**, designed to showcase research in High-Performance Computing, Computer Architecture, and Cryptography.
 
 ## Features
