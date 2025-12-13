@@ -2,8 +2,6 @@
 
 A modern, high-performance portfolio website built with **React** and **Vite**, designed to showcase research in High-Performance Computing, Computer Architecture, and Cryptography.
 
-![Portfolio Preview](/public/img/self.jpg)
-
 ## Features
 
 - **Personalized Aesthetic**: "Maroon & AMOLED Black" theme system with a glassmorphism sidebar.
