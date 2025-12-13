@@ -4,6 +4,27 @@ import { motion } from 'framer-motion';
 const Projects = () => {
     const projectsData = [
         {
+            title: "Accelerating Compute-Intensive Kernels",
+            description: "Accelerating compute-intensive kernels using x86 architecture and features like AVX2, AVX-512, NUMA, multi core and cache heirarchies. Features an enhanced GEMM implementation for matrix operations and a systolic array-based Smith-Waterman algorithm for genomic sequence alignment.",
+            tags: ["C++", "HPC", "Algorithms", "Parallelization"],
+            links: [
+                { url: "https://github.com/sai-kaushik-s/Enhanced-GEMM", label: "GEMM" },
+                { url: "https://github.com/sai-kaushik-s/Enhanced-Smith-Waterman", label: "Smith-Waterman" }
+            ],
+            status: "Passing"
+        },
+        {
+            title: "Gem5 Architecture Enhancements",
+            description: "Implementation of advanced cache replacement policies (RRIP, SHiP) and branch predictors (TAGE, Perceptron) within the Gem5 simulator framework. Analyzed performance trade-offs using SPEC CPU benchmarks.",
+            tags: ["C++", "Python", "gem5", "Computer Architecture"],
+            links: [
+                { url: "https://github.com/sai-kaushik-s/gem5-cache", label: "Cache Policies" },
+                { url: "https://github.com/sai-kaushik-s/gem5-branch-predictors", label: "Branch Predictors" },
+                { url: "https://github.com/sai-kaushik-s/gem5-matrix-multiplication", label: "Matrix Multiplication" }
+            ],
+            status: "Passing"
+        },
+        {
             title: "Lorenz Attractor Visualization",
             description: "High-performance visualization of the Lorenz Attractor chaotic system. Implements parallel computing algorithms using OpenMP, MPI, and CUDA C/C++ for efficient coordinate generation, rendered in real-time with OpenGL.",
             tags: ["C", "CUDA", "MPI", "OpenGL"],
@@ -40,7 +61,7 @@ const Projects = () => {
             tags: ["Python", "Logic Design"],
             links: [{ url: "https://github.com/sai-kaushik-s/Sim-File-Generator", label: "Source" }],
             status: "Passing"
-        }
+        },
     ];
 
     return (
