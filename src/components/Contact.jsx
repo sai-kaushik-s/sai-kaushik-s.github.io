@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import ScrambleText from './ScrambleText';
 
 const Contact = () => {
     return (
@@ -9,9 +10,11 @@ const Contact = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
             >
-                <h1 className="section-title">Get in Touch</h1>
+                <h1 className="section-title">
+                    <ScrambleText text="Get in Touch" />
+                </h1>
                 <p className="section-subtitle">
-                    // Channels of communication
+                    <ScrambleText text="// Channels of communication" />
                 </p>
                 <p style={{ fontSize: '1.5rem', color: 'var(--text-secondary)', marginBottom: '3rem', textAlign: 'center' }}>
                     Open to opportunities in System Design, HPC, and Quantum Computing.

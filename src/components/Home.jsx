@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import ScrambleText from './ScrambleText';
 
 const Home = () => {
     // Resume URL for viewing/downloading
@@ -12,9 +13,11 @@ const Home = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
             >
-                <h1 className="section-title">About me</h1>
+                <h1 className="section-title">
+                    <ScrambleText text="About me" />
+                </h1>
                 <p className="section-subtitle">
-                    // Introduction and Bio
+                    <ScrambleText text="// Introduction and Bio" />
                 </p>
 
                 <div style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', lineHeight: 1.8 }}>

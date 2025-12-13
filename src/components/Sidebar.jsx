@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { motion } from 'framer-motion';
+import ScrambleText from './ScrambleText';
 
 import selfImg from '../assets/images/self.jpg';
 
@@ -41,11 +42,14 @@ const Sidebar = ({ activeTab, onTabChange }) => {
           }}>
             <img src={selfImg} alt="Profile" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
-          <h3 style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>
-            <span style={{ color: 'var(--accent-primary)' }}>S</span>ai <span style={{ color: 'var(--accent-primary)' }}>K</span>aushik <span style={{ color: 'var(--accent-primary)' }}>S</span>udharkaran
+          <h3 style={{ fontSize: '1.8rem', marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
+            <ScrambleText
+              text="Sai Kaushik Sudhakaran"
+              className="sidebar-name"
+            />
           </h3>
           <p style={{ fontFamily: 'var(--font-code)', fontSize: '1rem', color: 'var(--text-secondary)' }}>
-            &lt;HPC/&gt;
+            <ScrambleText text="<HPC/>" />
           </p>
         </div>
 
@@ -82,7 +86,10 @@ const Sidebar = ({ activeTab, onTabChange }) => {
               }}
             >
               <i className={`${tab.icon}`} style={{ width: '20px', textAlign: 'center' }}></i>
-              <span>{tab.label}</span>
+              <ScrambleText
+                text={tab.label}
+                trigger={activeTab === tab.id}
+              />
             </button>
           ))}
         </nav>

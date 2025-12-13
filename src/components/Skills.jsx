@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import ScrambleText from './ScrambleText';
 
 const Skills = () => {
     const skillCategories = [
@@ -24,9 +25,11 @@ const Skills = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
             >
-                <h1 className="section-title">Technical Skills</h1>
+                <h1 className="section-title">
+                    <ScrambleText text="Technical Skills" />
+                </h1>
                 <p className="section-subtitle">
-                   // Technical Proficiency
+                    <ScrambleText text="// Technical Proficiency" />
                 </p>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>

@@ -57,6 +57,8 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
+  background-image: radial-gradient(var(--glass-border) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
 h1, h2, h3, h4, h5, h6 {

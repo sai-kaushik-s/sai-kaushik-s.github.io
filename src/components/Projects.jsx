@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import ScrambleText from './ScrambleText';
 
 const Projects = () => {
     const projectsData = [
@@ -71,9 +72,11 @@ const Projects = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
             >
-                <h1 className="section-title">Projects</h1>
+                <h1 className="section-title">
+                    <ScrambleText text="Projects" />
+                </h1>
                 <p className="section-subtitle">
-                    // Selected works in HPC & Architecture
+                    <ScrambleText text="// Selected works in HPC & Architecture" />
                 </p>
 
                 <div className="project-list" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>

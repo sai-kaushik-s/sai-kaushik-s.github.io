@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import ScrambleText from './ScrambleText';
 
 const Publications = () => {
     return (
@@ -9,9 +10,11 @@ const Publications = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
             >
-                <h1 className="section-title">Publications</h1>
+                <h1 className="section-title">
+                    <ScrambleText text="Publications" />
+                </h1>
                 <p className="section-subtitle">
-                    // Research Papers & Conference Proceedings
+                    <ScrambleText text="// Research Papers & Conference Proceedings" />
                 </p>
 
                 <div className="glass-panel" style={{

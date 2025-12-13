@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import ScrambleText from './ScrambleText';
 
 const Education = () => {
     const educationData = [
@@ -36,9 +37,11 @@ const Education = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
             >
-                <h1 className="section-title">Education</h1>
+                <h1 className="section-title">
+                    <ScrambleText text="Education" />
+                </h1>
                 <p className="section-subtitle">
-                    // Academic background
+                    <ScrambleText text="// Academic background" />
                 </p>
 
                 <div className="timeline-container" style={{ position: 'relative' }}>
