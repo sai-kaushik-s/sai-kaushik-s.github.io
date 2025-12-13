@@ -1,67 +1,43 @@
-# Sai Kaushik Sudhakaran - Portfolio
+# Astro Starter Kit: Minimal
 
-[![Deploy to GitHub Pages](https://github.com/sai-kaushik-s/sai-kaushik-s.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/sai-kaushik-s/sai-kaushik-s.github.io/actions/workflows/deploy.yml)
-
-A modern, high-performance portfolio website built with **React** and **Vite**, designed to showcase research in High-Performance Computing, Computer Architecture, and Cryptography.
-
-## Features
-
-- **Personalized Aesthetic**: "Maroon & AMOLED Black" theme system with a glassmorphism sidebar.
-- **Responsive Design**: Fluid grid layouts that adapt seamlessly to mobile and desktop screens.
-- **Interactive UI**:
-  - **Projects**: Filterable list of research projects with direct GitHub links.
-  - **Resume**: Integrated PDF viewer and direct download options.
-  - **Themes**: Toggle between Light and Dark modes (Dark mode default).
-- **Tech Stack**:
-  - **Frontend**: React 19, Vite, Framer Motion
-  - **Styling**: CSS Variables, Glassmorphism, Responsive Grid
-  - **Icons**: Font Awesome, Devicon
-  - **Fonts**: Hermit (Code), Inter (UI)
-
-## Installation & Setup
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/sai-kaushik-s/sai-kaushik-s.github.io.git
-   cd sai-kaushik-s.github.io
-   ```
-
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Run the development server:**
-   ```bash
-   npm run dev
-   ```
-
-4. **Build for production:**
-   ```bash
-   npm run build
-   ```
-
-## Project Structure
-
+```sh
+npm create astro@latest -- --template minimal
 ```
-├── public/              # Static assets (fonts, images)
+
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+
+## 🚀 Project Structure
+
+Inside of your Astro project, you'll see the following folders and files:
+
+```text
+/
+├── public/
 ├── src/
-│   ├── assets/          # CSS styles (base.css, variables.css)
-│   ├── components/      # React components (Home, Projects, Experience, etc.)
-│   ├── context/         # React Context (ThemeContext)
-│   ├── App.jsx          # Main application layout
-│   └── main.jsx         # Entry point
-├── .github/workflows/   # CI/CD for GitHub Pages
-└── vite.config.js       # Vite configuration
+│   └── pages/
+│       └── index.astro
+└── package.json
 ```
 
-## Deployment
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-This project is configured to automatically deploy to **GitHub Pages** via GitHub Actions.
-Any push to the `main` branch triggers the workflow defined in `.github/workflows/deploy.yml`.
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-## Contact
+Any static assets, like images, can be placed in the `public/` directory.
 
-- **Email**: saikaushik609@gmail.com
-- **GitHub**: [sai-kaushik-s](https://github.com/sai-kaushik-s)
-- **LinkedIn**: [Sai Kaushik Sudhakaran](https://www.linkedin.com/in/sai-kaushik-s/)
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

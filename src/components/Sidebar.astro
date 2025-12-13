@@ -1,0 +1,90 @@
+---
+import '../styles/components/Sidebar.css';
+
+const navItems = [
+  { label: '[ HOME ]',      href: '/',            code: 'HOME' },
+  { label: '[ EXPERIENCE ]',     href: '/experience',  code: 'EXP'  },
+  { label: '[ EDUCATION ]',   href: '/education',   code: 'EDU'  },
+  { label: '[ PROJECTS ]',   href: '/projects',    code: 'PROJ' },
+  { label: '[ PUBLICATIONS ]',  href: '/publications',code: 'PUB'  },
+  { label: '[ BLOGS ]',         href: '/blogs',       code: 'BLOG' },
+  { label: '[ CONTACT ]',       href: '/contact',     code: 'CON'  },
+];
+
+const pathname = Astro.url.pathname;
+const currentPath = pathname.endsWith('/') && pathname.length > 1
+  ? pathname.slice(0, -1)
+  : pathname;
+---
+
+<header class="nav-shell" role="banner" transition:persist>
+  <nav class="nav-inner" aria-label="Primary navigation">
+    <!-- Logo / identity -->
+    <a href="/" class="nav-logo" aria-label="Home">
+      <span class="logo-bracket">[</span>
+      <span class="logo-text">SKS</span>
+      <span class="logo-bracket">]</span>
+      <span class="logo-sub">sai-kaushik-s</span>
+    </a>
+
+    <!-- Desktop nav links -->
+    <ul class="nav-links" role="list">
+      {navItems.map(item => {
+        const isActive = currentPath === item.href || (item.href === '/' && currentPath === '');
+        return (
+          <li>
+            <a
+              href={item.href}
+              class={`nav-link ${isActive ? 'active' : ''}`}
+              aria-current={isActive ? 'page' : undefined}
+              data-astro-prefetch
+            >
+              {item.label}
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </nav>
+
+  <!-- Schematic separator line -->
+  <div class="nav-rule" aria-hidden="true"></div>
+</header>
+
+<!-- Mobile bottom dock -->
+<nav class="mobile-dock glass" aria-label="Mobile navigation" transition:persist>
+  {navItems.map(item => {
+    const isActive = currentPath === item.href || (item.href === '/' && currentPath === '');
+    return (
+      <a href={item.href} class={`dock-item ${isActive ? 'active' : ''}`} aria-label={item.code} data-astro-prefetch>
+        <span class="dock-code">{item.code}</span>
+      </a>
+    );
+  })}
+</nav>
+
+<script>
+  function updateActiveLinks() {
+    const pathname = window.location.pathname;
+    const currentPath = pathname.endsWith('/') && pathname.length > 1
+      ? pathname.slice(0, -1)
+      : pathname;
+
+    const navLinks = document.querySelectorAll('.nav-link, .dock-item');
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      const isActive = currentPath === href || (href === '/' && currentPath === '');
+      
+      if (isActive) {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.classList.remove('active');
+        link.removeAttribute('aria-current');
+      }
+    });
+  }
+
+  // Update on initial load and after every View Transition
+  document.addEventListener('astro:page-load', updateActiveLinks);
+</script>

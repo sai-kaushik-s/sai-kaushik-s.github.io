@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Sidebar from '../../components/Sidebar.astro';
+import { blogsData } from '../../data/blogs';
+import '../../styles/components/Blogs.css';
+
+export async function getStaticPaths() {
+  let posts = [];
+
+  try {
+    posts = await Astro.glob('../../data/blogs/**/index.md');
+  } catch {
+    posts = [];
+  }
+
+  return posts.map(post => {
+    const pathParts = post.file.split('/');
+    const slug = pathParts[pathParts.length - 2];
+
+    const metadata = blogsData.find(b => b.slug === slug);
+
+    return {
+      params: { slug },
+      props: { post, metadata }
+    };
+  });
+}
+
+const { post, metadata } = Astro.props;
+const { Content } = post;
+
+// Image resolution
+const images = import.meta.glob('/src/data/blogs/**/*.{jpg,jpeg,png,webp,gif}', { eager: true });
+const imagePath = `/src/data/blogs/${metadata?.slug}/${metadata?.image}`;
+const imageModule = images[imagePath] as any;
+const finalImage = imageModule?.default?.src || imageModule?.default;
+---
+
+<BaseLayout title={`${metadata?.title} | Blogs`} description={metadata?.excerpt}>
+  <Sidebar />
+  <div class="page-shell">
+    <main class="page-content">
+      <article class="post-container">
+        <header class="post-header">
+          <a href="/blogs" class="post-back-link">
+            [ BACK_TO_FEED ]
+          </a>
+          
+          <div class="post-meta-full">
+            {metadata?.date} // {metadata?.tags.join(' // ')}
+          </div>
+          <h1 class="post-title">{metadata?.title}</h1>
+        </header>
+
+        {finalImage && (
+          <img src={finalImage} alt={metadata?.title} class="post-hero-img" />
+        )}
+
+        <div class="prose">
+          <Content />
+        </div>
+        
+        <footer style="margin-top: var(--space-2xl); padding-top: var(--space-xl); border-top: 1px solid var(--border-faint); text-align: center;">
+          <p class="mono-sm" style="color: var(--text-muted);">// END_OF_LOG</p>
+        </footer>
+      </article>
+    </main>
+  </div>
+</BaseLayout>

@@ -1,0 +1,138 @@
+.kernels-section {
+  padding-top: var(--space-xl);
+}
+
+/* ── Timeline layout ─────────────────────────────────── */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.tl-item {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: var(--space-lg);
+  position: relative;
+}
+
+/* ── Left column ─────────────────────────────────────── */
+.tl-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1.6rem;
+}
+
+.tl-rank {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.tl-node {
+  width: 10px; height: 10px;
+  background: var(--obsidian-0);
+  border: 2px solid var(--border-mid);
+  border-radius: 2px;
+  flex-shrink: 0;
+  transition: border-color var(--t-mid), box-shadow var(--t-mid);
+  z-index: 1;
+}
+.tl-node.teal {
+  border-color: var(--teal);
+  box-shadow: 0 0 10px var(--teal-glow-hard);
+  background: rgba(0, 173, 181, 0.15);
+}
+.tl-node.pink {
+  border-color: var(--pink);
+  box-shadow: 0 0 10px var(--pink-glow-hard);
+  background: rgba(255, 45, 120, 0.15);
+}
+
+.tl-rail {
+  flex: 1;
+  width: 1px;
+  background: var(--border-faint);
+  margin-top: 4px;
+}
+.tl-item:last-child .tl-rail { display: none; }
+
+/* ── Content card ────────────────────────────────────── */
+.tl-content {
+  padding: var(--space-xl);
+  border-radius: 2px;
+  margin-bottom: var(--space-lg);
+  transition:
+    background var(--t-mid) var(--ease-in-out),
+    border-color var(--t-mid) var(--ease-in-out),
+    box-shadow var(--t-mid) var(--ease-in-out);
+}
+
+.tl-content.teal {
+  border-color: var(--border-teal);
+  box-shadow: 0 0 20px var(--teal-glow);
+}
+.tl-content.pink {
+  border-color: var(--border-pink);
+  box-shadow: 0 0 20px var(--pink-glow);
+}
+
+.tl-content:hover {
+  background: var(--surface-2);
+}
+
+/* ── Content details ─────────────────────────────────── */
+.tl-title {
+  font-family: var(--font-mono);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.tl-desc {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+/* ── Tech badges ─────────────────────────────────────── */
+.tl-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border-faint);
+}
+
+/* ── Links ───────────────────────────────────────────── */
+.tl-links {
+  display: flex;
+  gap: 1rem;
+  padding-top: var(--space-md);
+}
+.tl-link {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+  transition: color var(--t-fast);
+}
+.tl-link.teal:hover { color: var(--teal); }
+.tl-link.pink:hover { color: var(--pink); }
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 600px) {
+  .tl-item {
+    grid-template-columns: 48px 1fr;
+    gap: var(--space-md);
+  }
+  .tl-rank { font-size: 0.45rem; }
+  .tl-content { padding: var(--space-lg); }
+}

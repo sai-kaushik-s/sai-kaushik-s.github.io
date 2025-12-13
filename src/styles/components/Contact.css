@@ -1,0 +1,134 @@
+.handshake-section { padding-top: var(--space-xl); }
+
+/* ── Layout ──────────────────────────────────────────── */
+.hs-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+/* ── Left copy ───────────────────────────────────────── */
+.hs-tagline {
+  font-family: var(--font-body);
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin-bottom: var(--space-md);
+}
+.accent-teal   { color: var(--teal); }
+.accent-pink   { color: var(--pink); }
+
+.hs-sub {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* ── Contact link cards ──────────────────────────────── */
+.hs-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  border: 1px solid var(--border-faint);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.hs-card {
+  position: relative;
+  padding: var(--space-lg) var(--space-xl);
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid var(--border-faint);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: background var(--t-mid);
+  overflow: hidden;
+}
+.hs-card:last-child { border-bottom: none; }
+.hs-card:hover { background: var(--surface-2); }
+.hs-card.teal:hover   { box-shadow: inset 0 0 0 1px var(--border-teal); }
+.hs-card.pink:hover   { box-shadow: inset 0 0 0 1px var(--border-pink); }
+
+/* ── Card header ─────────────────────────────────────── */
+.hs-card-top {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+.hs-id {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+}
+.hs-label {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+}
+.hs-card.teal   .hs-label { color: var(--teal);   }
+.hs-card.pink   .hs-label { color: var(--pink);   }
+
+/* ── Value + copy ────────────────────────────────────── */
+.hs-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  justify-content: space-between;
+}
+.hs-value {
+  font-family: var(--font-mono);
+  font-size: clamp(0.82rem, 1.5vw, 1rem);
+  color: var(--text-primary);
+  transition: color var(--t-fast);
+}
+.hs-card.teal   .hs-value:hover { color: var(--teal);   }
+.hs-card.pink   .hs-value:hover { color: var(--pink);   }
+
+.copy-btn {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  padding: 0.3em 0.8em;
+  border-radius: 2px;
+  background: transparent;
+  cursor: pointer;
+  transition: all var(--t-fast);
+  flex-shrink: 0;
+}
+.copy-btn.teal {
+  border: 1px solid var(--border-teal);
+  color: var(--teal);
+}
+.copy-btn.teal:hover, .copy-btn.teal.acked {
+  background: rgba(0, 173, 181, 0.12);
+}
+
+.copy-btn.pink {
+  border: 1px solid var(--border-pink);
+  color: var(--pink);
+}
+.copy-btn.pink:hover, .copy-btn.pink.acked {
+  background: rgba(255, 45, 120, 0.12);
+}
+
+/* ── Lane accent ─────────────────────────────────────── */
+.hs-lane {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; width: 2px;
+  opacity: 0; transition: opacity var(--t-mid);
+}
+.hs-card.teal   .hs-lane { background: linear-gradient(to bottom, var(--teal)   0%, transparent); }
+.hs-card.pink   .hs-lane { background: linear-gradient(to bottom, var(--pink)   0%, transparent); }
+.hs-card:hover .hs-lane { opacity: 1; }
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 700px) {
+  .hs-layout { grid-template-columns: 1fr; gap: var(--space-xl); }
+}

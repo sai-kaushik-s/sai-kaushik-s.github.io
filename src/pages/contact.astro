@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Sidebar from '../components/Sidebar.astro';
+import { contactLinks } from '../data/contact';
+import '../styles/components/Contact.css';
+---
+
+<BaseLayout title="Contact | Sai Kaushik Sudhakaran" description="Get in touch.">
+  <Sidebar />
+  <div class="page-shell">
+    <main class="page-content" id="main-content">
+      <section id="handshake" class="handshake-section" aria-labelledby="handshake-title">
+        <p class="section-label">06 :: HANDSHAKE PROTOCOL</p>
+        <h2 class="section-title" id="handshake-title">Contact</h2>
+
+        <div class="hs-layout">
+          <!-- Left: tagline -->
+          <div class="hs-left">
+            <p class="hs-tagline">
+              Open to <span class="accent-teal">research collaborations</span> and 
+              opportunities in <span class="accent-pink">Systems Security</span>.
+            </p>
+            <p class="hs-sub">
+              Response latency: typically &lt; 24h.
+            </p>
+          </div>
+
+          <!-- Right: contact cards -->
+          <div class="hs-links">
+            {contactLinks.map((item) => (
+              <div class={`hs-card glass ${item.color}`} data-id={item.id}>
+                <div class="hs-card-top">
+                  <span class="hs-id">{item.id}</span>
+                  <span class="hs-label">{item.label}</span>
+                </div>
+
+                <div class="hs-actions">
+                  <a
+                    href={item.href}
+                    target={item.href.startsWith('mailto') ? undefined : '_blank'}
+                    rel="noopener noreferrer"
+                    class="hs-value"
+                  >
+                    {item.value} ↗
+                  </a>
+
+                  {item.copyable && (
+                    <button
+                      class={`copy-btn ${item.color}`}
+                      data-copy={item.value}
+                      aria-label={`Copy ${item.label}`}
+                      onclick={`
+                        navigator.clipboard.writeText('${item.value}').then(() => {
+                          const btn = this;
+                          const original = btn.textContent;
+                          btn.textContent = 'ACK ✓';
+                          btn.classList.add('acked');
+                          setTimeout(() => { btn.textContent = original; btn.classList.remove('acked'); }, 1800);
+                        });
+                      `}
+                    >
+                      COPY
+                    </button>
+                  )}
+                </div>
+                <div class="hs-lane" aria-hidden="true"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>

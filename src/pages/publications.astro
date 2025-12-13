@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Sidebar from '../components/Sidebar.astro';
+import '../styles/components/Publications.css';
+---
+
+<BaseLayout title="Research Output | Sai Kaushik Sudhakaran" description="Publications and research.">
+  <Sidebar />
+  <div class="page-shell">
+    <main class="page-content" id="main-content">
+      <section id="research" class="research-section" aria-labelledby="research-title">
+        <p class="section-label">05 :: RESEARCH OUTPUT</p>
+        <h2 class="section-title" id="research-title">Publications</h2>
+
+        <div class="glass-box">
+          <div class="empty-state">
+            <div class="icon-wrapper">
+              <!-- SVG Flask Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M10 2v7.31"></path>
+                <path d="M14 9.3V1.99"></path>
+                <path d="M8.5 2h7"></path>
+                <path d="M14 9.3a6.5 6.5 0 1 1-4 0"></path>
+                <path d="M5.52 16h12.96"></path>
+              </svg>
+            </div>
+            <h3 class="box-title">Work in Progress</h3>
+            <p class="box-desc">
+              // 404: Paper not found (yet).<br />Currently compiling ideas and experiments.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
