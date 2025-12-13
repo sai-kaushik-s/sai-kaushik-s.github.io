@@ -1,16 +1,67 @@
-# React + Vite
+# Sai Kaushik Sudhakaran - Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, high-performance portfolio website built with **React** and **Vite**, designed to showcase research in High-Performance Computing, Computer Architecture, and Cryptography.
 
-Currently, two official plugins are available:
+![Portfolio Preview](/public/img/self.jpg)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- **Personalized Aesthetic**: "Maroon & AMOLED Black" theme system with a glassmorphism sidebar.
+- **Responsive Design**: Fluid grid layouts that adapt seamlessly to mobile and desktop screens.
+- **Interactive UI**:
+  - **Projects**: Filterable list of research projects with direct GitHub links.
+  - **Resume**: Integrated PDF viewer and direct download options.
+  - **Themes**: Toggle between Light and Dark modes (Dark mode default).
+- **Tech Stack**:
+  - **Frontend**: React 19, Vite, Framer Motion
+  - **Styling**: CSS Variables, Glassmorphism, Responsive Grid
+  - **Icons**: Font Awesome, Devicon
+  - **Fonts**: Hermit (Code), Inter (UI)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Installation & Setup
 
-## Expanding the ESLint configuration
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/sai-kaushik-s/sai-kaushik-s.github.io.git
+   cd sai-kaushik-s.github.io
+   ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+## Project Structure
+
+```
+├── public/              # Static assets (fonts, images)
+├── src/
+│   ├── assets/          # CSS styles (base.css, variables.css)
+│   ├── components/      # React components (Home, Projects, Experience, etc.)
+│   ├── context/         # React Context (ThemeContext)
+│   ├── App.jsx          # Main application layout
+│   └── main.jsx         # Entry point
+├── .github/workflows/   # CI/CD for GitHub Pages
+└── vite.config.js       # Vite configuration
+```
+
+## Deployment
+
+This project is configured to automatically deploy to **GitHub Pages** via GitHub Actions.
+Any push to the `main` branch triggers the workflow defined in `.github/workflows/deploy.yml`.
+
+## Contact
+
+- **Email**: saikaushik609@gmail.com
+- **GitHub**: [sai-kaushik-s](https://github.com/sai-kaushik-s)
+- **LinkedIn**: [Sai Kaushik Sudhakaran](https://www.linkedin.com/in/sai-kaushik-s/)
