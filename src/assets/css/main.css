@@ -1,4 +1,4 @@
-/** Preloader **/
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css);
 
 .loader {
   background: #ffffff;
@@ -89,10 +89,6 @@
     transform: rotate(360deg);
   }
 }
-
-/** End preloader **/
-
-/** Header **/
 
 .img-profile {
   position: relative;
@@ -265,10 +261,6 @@
   border-color: transparent transparent transparent #000000;
 }
 
-/** End header **/
-
-/** Tabs sections **/
-
 .content {
   padding: 100px;
   position: relative;
@@ -326,8 +318,6 @@
 .footer.col-md-1 {
   width: 9.33333%;
 }
-
-/** About tab **/
 
 p.lead-intro {
   padding: 0 80px;
@@ -464,10 +454,6 @@ img.signature {
   font-size: 15.5px;
   font-weight: 400;
 }
-
-/** End about tab **/
-
-/** Resume tab **/
 
 .timeline {
   padding: 60px 0 20px 0;
@@ -2248,10 +2234,6 @@ span.meta-date {
   }
 }
 
-/* -------------------- End media queries -------------------- */
-
-/*------------------------GitHub Badges-----------------------*/
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css);
 @font-face {
   font-family: "Roboto";
   font-style: normal;
