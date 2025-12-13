@@ -36,11 +36,9 @@ const Education = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
             >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-                    <h1 className="section-title">Education</h1>
-                </div>
-                <p style={{ color: 'var(--text-secondary)', marginBottom: '3rem', fontFamily: 'var(--font-code)' }}>
-                    // Academic background & milestones
+                <h1 className="section-title">Education</h1>
+                <p className="section-subtitle">
+                    // Academic background
                 </p>
 
                 <div className="timeline-container" style={{ position: 'relative' }}>

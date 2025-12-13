@@ -10,14 +10,14 @@ const Publications = () => {
                 transition={{ duration: 0.5 }}
             >
                 <h1 className="section-title">Publications</h1>
-                <p style={{ color: 'var(--text-secondary)', marginBottom: '3rem', fontFamily: 'var(--font-code)' }}>
-                    // Research output & conferences
+                <p className="section-subtitle">
+                    // Research Papers & Conference Proceedings
                 </p>
 
                 <div className="glass-panel" style={{
                     padding: '3rem',
                     borderRadius: '12px',
-                    borderLeft: '4px solid var(--accent-secondary)',
+                    borderLeft: '4px solid var(--accent-primary)',
                     textAlign: 'center',
                     cursor: 'crosshair'
                 }}>

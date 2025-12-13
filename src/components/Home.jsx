@@ -13,7 +13,7 @@ const Home = () => {
                 transition={{ duration: 0.5 }}
             >
                 <h1 className="section-title">About me</h1>
-                <p style={{ color: 'var(--text-secondary)', marginBottom: '3rem', fontFamily: 'var(--font-code)' }}>
+                <p className="section-subtitle">
                     // Introduction and Bio
                 </p>
 

@@ -25,8 +25,8 @@ const Skills = () => {
                 transition={{ duration: 0.5 }}
             >
                 <h1 className="section-title">Technical Skills</h1>
-                <p style={{ color: 'var(--text-secondary)', marginBottom: '3rem', fontFamily: 'var(--font-code)' }}>
-                    // Technical stack & tools
+                <p className="section-subtitle">
+                   // Technical Proficiency
                 </p>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
@@ -38,7 +38,7 @@ const Skills = () => {
                             style={{
                                 padding: '1.5rem 2rem 2rem 2rem',
                                 borderRadius: '12px',
-                                borderLeft: `4px solid ${index === 0 ? 'var(--accent-primary)' : index === 1 ? 'var(--accent-secondary)' : '#0077b5'}`,
+                                borderLeft: `4px solid var(--accent-primary)`,
                                 cursor: 'crosshair'
                             }}
                         >

@@ -82,11 +82,9 @@ const Experience = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
             >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-                    <h1 className="section-title">Experience</h1>
-                </div>
-                <p style={{ color: 'var(--text-secondary)', marginBottom: '3rem', fontFamily: 'var(--font-code)' }}>
-                    // Professional journey & research
+                <h1 className="section-title">Experience</h1>
+                <p className="section-subtitle">
+                    // My professional journey
                 </p>
 
                 <div className="timeline-container" style={{ position: 'relative' }}>

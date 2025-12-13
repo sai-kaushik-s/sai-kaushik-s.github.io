@@ -10,10 +10,10 @@ const Contact = () => {
                 transition={{ duration: 0.5 }}
             >
                 <h1 className="section-title">Get in Touch</h1>
-                <p style={{ color: 'var(--text-secondary)', marginBottom: '3rem', fontFamily: 'var(--font-code)' }}>
+                <p className="section-subtitle">
                     // Channels of communication
                 </p>
-                <p style={{ fontSize: '1.5rem', color: 'var(--text-secondary)', marginBottom: '3rem' }}>
+                <p style={{ fontSize: '1.5rem', color: 'var(--text-secondary)', marginBottom: '3rem', textAlign: 'center' }}>
                     Open to opportunities in System Design, HPC, and Quantum Computing.
                 </p>
 
@@ -65,7 +65,7 @@ const Contact = () => {
                             alignItems: 'center',
                             gap: '1.5rem',
                             cursor: 'crosshair',
-                            borderLeft: '4px solid var(--accent-secondary)'
+                            borderLeft: '4px solid var(--accent-primary)'
                         }}
                     >
                         <div style={{
@@ -77,7 +77,7 @@ const Contact = () => {
                             alignItems: 'center',
                             justifyContent: 'center',
                             fontSize: '1.5rem',
-                            color: 'var(--accent-secondary)'
+                            color: 'var(--accent-primary)'
                         }}>
                             <i className="fa fa-phone"></i>
                         </div>
@@ -102,7 +102,7 @@ const Contact = () => {
                             color: 'inherit',
                             textDecoration: 'none',
                             cursor: 'crosshair',
-                            borderLeft: '4px solid #0077b5'
+                            borderLeft: '4px solid var(--accent-primary)'
                         }}
                     >
                         <div style={{
@@ -114,7 +114,7 @@ const Contact = () => {
                             alignItems: 'center',
                             justifyContent: 'center',
                             fontSize: '1.5rem',
-                            color: '#0077b5'
+                            color: 'var(--accent-primary)'
                         }}>
                             <i className="fa fa-linkedin"></i>
                         </div>
@@ -139,7 +139,7 @@ const Contact = () => {
                             color: 'inherit',
                             textDecoration: 'none',
                             cursor: 'crosshair',
-                            borderLeft: '4px solid var(--text-primary)'
+                            borderLeft: '4px solid var(--accent-primary)'
                         }}
                     >
                         <div style={{
@@ -151,7 +151,7 @@ const Contact = () => {
                             alignItems: 'center',
                             justifyContent: 'center',
                             fontSize: '1.5rem',
-                            color: 'var(--text-primary)'
+                            color: 'var(--accent-primary)'
                         }}>
                             <i className="fa fa-github"></i>
                         </div>

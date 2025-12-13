@@ -72,7 +72,7 @@ const Projects = () => {
                 transition={{ duration: 0.5 }}
             >
                 <h1 className="section-title">Projects</h1>
-                <p style={{ color: 'var(--text-secondary)', marginBottom: '3rem', fontFamily: 'var(--font-code)' }}>
+                <p className="section-subtitle">
                     // Selected works in HPC & Architecture
                 </p>
 
@@ -89,7 +89,7 @@ const Projects = () => {
                                 flexDirection: 'column',
                                 justifyContent: 'space-between',
                                 cursor: 'crosshair',
-                                borderLeft: `4px solid var(--accent-secondary)`,
+                                borderLeft: `4px solid var(--accent-primary)`,
                                 height: '100%',
                                 minHeight: '200px'
                             }}
