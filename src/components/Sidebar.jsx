@@ -10,9 +10,9 @@ const Sidebar = ({ activeTab, onTabChange }) => {
     { id: 'home', icon: 'fa fa-home', label: 'Home' },
     { id: 'experience', icon: 'fa fa-briefcase', label: 'Experience' },
     { id: 'education', icon: 'fa fa-graduation-cap', label: 'Education' },
-    { id: 'skills', icon: 'fa fa-code', label: 'Skills' },
-    { id: 'projects', icon: 'fa fa-cubes', label: 'Projects' },
     { id: 'publications', icon: 'fa fa-book', label: 'Publications' },
+    { id: 'projects', icon: 'fa fa-cubes', label: 'Projects' },
+    { id: 'skills', icon: 'fa fa-code', label: 'Skills' },
     { id: 'contact', icon: 'fa fa-envelope-o', label: 'Contact' }
   ];
 
