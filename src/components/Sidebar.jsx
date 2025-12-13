@@ -2,6 +2,8 @@ import React from 'react';
 import { useTheme } from '../context/ThemeContext';
 import { motion } from 'framer-motion';
 
+import selfImg from '../assets/images/self.jpg';
+
 const Sidebar = ({ activeTab, onTabChange }) => {
   const { theme, toggleTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
@@ -37,7 +39,7 @@ const Sidebar = ({ activeTab, onTabChange }) => {
             border: '2px solid var(--accent-primary)',
             boxShadow: '0 0 20px var(--accent-primary)'
           }}>
-            <img src="/img/self.jpg" alt="Profile" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img src={selfImg} alt="Profile" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
           <h3 style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>
             <span style={{ color: 'var(--accent-primary)' }}>S</span>ai <span style={{ color: 'var(--accent-primary)' }}>K</span>aushik <span style={{ color: 'var(--accent-primary)' }}>S</span>udharkaran
