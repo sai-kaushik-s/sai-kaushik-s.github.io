@@ -1,6 +1,5 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
-import HeroCanvas from '../components/HeroCanvas.tsx';
 import '../styles/global.css';
 
 interface Props {
@@ -69,11 +68,6 @@ const { title, description = "Portfolio of Sai Kaushik Sudhakaran — PhD Resear
     </script>
   </head>
   <body>
-    <!-- Global Persistent Background -->
-    <div class="global-canvas" aria-hidden="true" transition:persist>
-      <HeroCanvas client:idle />
-    </div>
-
     <slot />
   </body>
 </html>
