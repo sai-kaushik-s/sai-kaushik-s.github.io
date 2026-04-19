@@ -339,6 +339,15 @@ code, pre, .mono {
   animation: shift-in 0.2s var(--ease-out) forwards;
 }
 
+::view-transition-group(root) {
+  z-index: 1;
+}
+
+::view-transition-group(nav-shell),
+::view-transition-group(mobile-dock) {
+  z-index: 10001;
+}
+
 /* Data Loading Bar effect */
 ::view-transition-group(root)::after {
   content: '';
@@ -347,7 +356,7 @@ code, pre, .mono {
   height: 2px;
   background: var(--teal);
   box-shadow: 0 0 10px var(--teal-glow-hard);
-  z-index: 9999;
+  z-index: 10000;
   animation: glitch-flash 0.3s ease-out;
 }
 
