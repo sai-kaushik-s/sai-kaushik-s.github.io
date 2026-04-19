@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Sidebar from '../components/Sidebar.astro';
+import { educationData } from '../data/education';
+import '../styles/components/Education.css';
+---
+
+<BaseLayout title="Education | Sai Kaushik Sudhakaran" description="Academic background and degrees.">
+  <Sidebar />
+  <div class="page-shell">
+    <main class="page-content" id="main-content">
+      <section id="compile" class="compile-section" aria-labelledby="compile-title">
+        <p class="section-label">03 :: COMPILE CHAIN</p>
+        <h2 class="section-title" id="compile-title">Education</h2>
+
+        <div class="timeline">
+          {educationData.map((item, index) => (
+            <div class={`tl-item ${item.active ? 'active teal' : 'pink'}`}>
+              <div class="tl-left" aria-hidden="true">
+                <span class="tl-rank">[EDU_{index.toString().padStart(2, '0')}]</span>
+                <div class={`tl-node ${item.active ? 'active' : ''}`}></div>
+                <div class="tl-rail"></div>
+              </div>
+
+              <!-- Right: content -->
+              <div class="tl-content glass">
+                <div class="tl-meta">
+                  <span class="tl-date">{item.date}</span>
+                  {item.active && <span class="tl-live">● LIVE</span>}
+                </div>
+                <h3 class="tl-role">{item.degree}</h3>
+                <p class="tl-company">{item.school}</p>
+
+                <div class="tl-tech">
+                  <div class={`edu-grade ${item.active ? 'active' : ''}`}>
+                    <span class="grade-label">SCORE</span>
+                    <span class="grade-val">{item.grade}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>

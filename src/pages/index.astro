@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Sidebar from '../components/Sidebar.astro';
+import '../styles/components/Hero.css';
+
+const resumeUrl = "https://drive.google.com/file/d/1pk1CZFhTR3KvQ5StEC0RG6SGKhVy05Z1/view?usp=sharing";
+---
+
+<BaseLayout title="Sai Kaushik Sudhakaran | HPC · FHE">
+  <Sidebar />
+  <main>
+    <section id="home" class="hero" aria-label="Hero">
+
+      <!-- Content layer -->
+      <div class="hero-inner">
+        <!-- Left: Text panel -->
+        <div class="hero-text">
+          <p class="hero-status">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span class="mono-sm">SYS_INIT</span>
+          </p>
+
+          <div class="hero-greeting mono-sm">Hello, I'm</div>
+
+          <h1 class="hero-name">
+            Sai Kaushik <br/> Sudhakaran
+          </h1>
+
+          <p class="hero-role">
+            <span class="role-prompt-teal">&gt;&gt;</span>
+            PhD Researcher
+            <span class="role-prompt-pink">&gt;&gt;</span>
+            Sci-Fi Writer
+          </p>
+
+          <p class="hero-bio">
+            Investigating <span class="accent-teal">Fully Homomorphic Encryption (FHE)</span> and 
+            <span class="accent-teal">Tsetlin Machines</span> for secure, high-performance 
+            <span class="accent-teal">Machine Learning</span> pipelines. 
+            Bridging cryptographic theory with bleeding-edge 
+            <span class="accent-teal">HPC</span> implementation.
+            <span style="display: block; margin-top: 0.75rem;">
+              Alongside my research, I am developing a 
+              <span class="accent-pink">multiverse-themed novel</span>.
+            </span>
+          </p>
+
+          <div class="hero-cta">
+            <a href={resumeUrl} target="_blank" rel="noopener noreferrer" class="btn-teal" id="hero-resume-btn">
+              [ RESUME ]
+            </a>
+            <a href="/contact" class="btn-ghost" id="hero-contact-btn">
+              [ HANDSHAKE ]
+            </a>
+          </div>
+
+          <!-- Compact stats row -->
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-val">HPC</span>
+              <span class="stat-label">AVX · CUDA · MPI</span>
+            </div>
+            <div class="stat-sep" aria-hidden="true"></div>
+            <div class="stat">
+              <span class="stat-val">FHE</span>
+              <span class="stat-label">TFHE · BFV · CKKS</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  main {
+    min-height: 100vh;
+  }
+</style>

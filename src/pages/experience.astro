@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Sidebar from '../components/Sidebar.astro';
+import { experienceData } from '../data/experience';
+import '../styles/components/Experience.css';
+---
+
+<BaseLayout title="Experience | Sai Kaushik Sudhakaran" description="Professional and research experience.">
+  <Sidebar />
+  <div class="page-shell">
+    <main class="page-content" id="main-content">
+      <section id="stack" class="stack-section" aria-labelledby="stack-title">
+        <p class="section-label">02 :: EXECUTION HISTORY</p>
+        <h2 class="section-title" id="stack-title">Experience</h2>
+
+        <div class="timeline">
+          {experienceData.map((item, index) => (
+            <div class={`tl-item ${item.active ? 'active teal' : 'pink'}`}>
+              <div class="tl-left" aria-hidden="true">
+                <span class="tl-rank">[EXP_{index.toString().padStart(2, '0')}]</span>
+                <div class={`tl-node ${item.active ? 'active' : ''}`}></div>
+                <div class="tl-rail"></div>
+              </div>
+
+              <!-- Right: content -->
+              <div class="tl-content glass">
+                <div class="tl-meta">
+                  <span class="tl-date">{item.date}</span>
+                  {item.active && <span class="tl-live">● LIVE</span>}
+                </div>
+                <h3 class="tl-role">{item.role}</h3>
+                <p class="tl-company">{item.company}</p>
+
+                <ul class="tl-details">
+                  {item.details.map(d => (
+                    <li>
+                      <span class="detail-arrow" aria-hidden="true">→</span>
+                      {d}
+                    </li>
+                  ))}
+                </ul>
+
+                <div class="tl-tech">
+                  {item.tech.map(t => (
+                    <span class="badge">{t}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>

@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Sidebar from '../components/Sidebar.astro';
+import { blogsData } from '../data/blogs';
+import '../styles/components/Blogs.css';
+
+// We import all images to ensure they are processed by Astro
+const images = import.meta.glob('/src/data/blogs/**/*.{jpg,jpeg,png,webp,gif}', { eager: true });
+---
+
+<BaseLayout title="Blogs | Sai Kaushik Sudhakaran" description="Technical writing and research journals.">
+  <Sidebar />
+  <div class="page-shell">
+    <main class="page-content" id="main-content">
+      <section id="blogs" class="blogs-section" aria-labelledby="blogs-title">
+        <p class="section-label">06 :: LOG_STREAM</p>
+        <h2 class="section-title" id="blogs-title">Technical Journal</h2>
+
+        <div class="timeline">
+          {blogsData.map((blog, index) => {
+            // Even indexes become teal, odd indexes become pink
+            const themeColor = index % 2 === 0 ? 'teal' : 'pink';
+
+            // Construct the expected image path
+            const imagePath = `/src/data/blogs/${blog.slug}/${blog.image}`;
+            const imageModule = images[imagePath] as any;
+            const finalImage = imageModule?.default?.src || imageModule?.default;
+
+            return (
+              <div class={`tl-item ${themeColor}`}>
+                {/* Left: rank + dot + rail */}
+                <div class="tl-left" aria-hidden="true">
+                  <span class="tl-rank">[B{index.toString().padStart(2, '0')}]</span>
+                  <div class={`tl-node ${themeColor}`}></div>
+                  <div class="tl-rail"></div>
+                </div>
+
+                {/* Right: Clickable Glass Card */}
+                <a 
+                  href={`/blogs/${blog.slug}`} 
+                  class={`tl-content glass ${themeColor} glass-hover`} 
+                  data-astro-prefetch
+                  style="display: block; text-decoration: none;"
+                >
+                  <div class="tl-meta" style="margin-bottom: var(--space-md);">
+                    <span class="tl-date">{blog.date}</span>
+                  </div>
+
+                  <h3 class="tl-title">{blog.title}</h3>
+                  
+                  {/* Conditionally render image inside the timeline flow */}
+                  {finalImage && (
+                    <div style="margin: var(--space-md) 0; border: 1px solid var(--border-dim); border-radius: 2px; overflow: hidden;">
+                      <img src={finalImage} alt={blog.title} style="width: 100%; height: auto; display: block; filter: grayscale(20%); transition: filter var(--t-fast);" />
+                    </div>
+                  )}
+
+                  <p class="tl-desc" style="margin-bottom: var(--space-md);">
+                    {blog.excerpt}
+                  </p>
+
+                  <div class="tl-tech">
+                    {blog.tags.map(tag => (
+                      <span class={`badge badge-${themeColor}`}>{tag}</span>
+                    ))}
+                  </div>
+
+                  <div class="tl-links" style="margin-top: var(--space-lg);">
+                    <span class={`btn-ghost ${themeColor}`} style="padding: 0.4em 0.8em; font-size: 0.75rem;">
+                      READ_ENTRY ->
+                    </span>
+                  </div>
+                </a>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>

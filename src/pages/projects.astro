@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Sidebar from '../components/Sidebar.astro';
+import { projectsData } from '../data/projects';
+import '../styles/components/Projects.css';
+---
+
+<BaseLayout title="Projects | Sai Kaushik Sudhakaran" description="Completed projects and open-source contributions.">
+  <Sidebar />
+  <div class="page-shell">
+    <main class="page-content" id="main-content">
+      <section id="kernels" class="kernels-section" aria-labelledby="kernels-title">
+        <p class="section-label">04 :: COMPUTE MODULES</p>
+        <h2 class="section-title" id="kernels-title">Projects</h2>
+
+        <div class="timeline">
+          {projectsData.map((project, index) => {
+            const themeColor = index % 2 === 0 ? 'teal' : 'pink';
+
+            return (
+              <div class={`tl-item ${themeColor}`}>
+                <div class="tl-left" aria-hidden="true">
+                  <span class="tl-rank">[PRJ_{index.toString().padStart(2, '0')}]</span>
+                  <div class={`tl-node ${themeColor}`}></div>
+                  <div class="tl-rail"></div>
+                </div>
+
+                <div class={`tl-content glass ${themeColor}`}>
+                  <h3 class="tl-title">{project.title}</h3>
+                  <p class="tl-desc">{project.description}</p>
+
+                  {/* Collaborators conditionally rendered here */}
+                  {project.collaborators && project.collaborators.length > 0 && (
+                    <div class="tl-collaborators" style="font-size: 0.9em; margin-bottom: 1rem; opacity: 0.8;">
+                      <span class="collab-label">> Collaborators: </span>
+                      {project.collaborators.map((collab, collabIndex) => (
+                        <span>
+                          <a href={collab.linkedin} target="_blank" rel="noopener noreferrer" class={`collab-link hover:text-${themeColor}`}>
+                            {collab.name}
+                          </a>
+                          {collabIndex < project.collaborators.length - 1 && ', '}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  <div class="tl-tech">
+                    {project.tags.map(tag => (
+                      <span class={`badge badge-${themeColor}`}>{tag}</span>
+                    ))}
+                  </div>
+
+                  <div class="tl-links">
+                    {project.links.map(link => (
+                      <a href={link.url} target="_blank" rel="noopener noreferrer" class={`tl-link ${themeColor}`}>
+                        {link.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+    </main>
+  </div>
+</BaseLayout>
