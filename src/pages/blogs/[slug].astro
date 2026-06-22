@@ -29,6 +29,10 @@ export async function getStaticPaths() {
 const { post, metadata } = Astro.props;
 const { Content } = post;
 
+// Calculate theme color based on post index in blogsData
+const postIndex = blogsData.findIndex(b => b.slug === metadata?.slug);
+const themeColor = postIndex !== -1 && postIndex % 2 === 0 ? 'teal' : 'pink';
+
 // Image resolution
 const images = import.meta.glob('/src/data/blogs/**/*.{jpg,jpeg,png,webp,gif}', { eager: true });
 const imagePath = `/src/data/blogs/${metadata?.slug}/${metadata?.image}`;
@@ -47,9 +51,17 @@ const finalImage = imageModule?.default?.src || imageModule?.default;
           </a>
           
           <div class="post-meta-full">
-            {metadata?.date} // {metadata?.tags.join(' // ')}
+            {metadata?.date}
           </div>
           <h1 class="post-title">{metadata?.title}</h1>
+
+          {metadata?.tags && (
+            <div class="post-tags">
+              {metadata.tags.map(tag => (
+                <span class={`badge badge-${themeColor}`}>{tag}</span>
+              ))}
+            </div>
+          )}
         </header>
 
         {finalImage && (
@@ -60,7 +72,7 @@ const finalImage = imageModule?.default?.src || imageModule?.default;
           <Content />
         </div>
         
-        <footer style="margin-top: var(--space-2xl); padding-top: var(--space-xl); border-top: 1px solid var(--border-faint); text-align: center;">
+        <footer style="margin-top: var(--space-xl); padding-top: var(--space-md); border-top: 1px solid var(--border-faint); text-align: center;">
           <p class="mono-sm" style="color: var(--text-muted);">// END_OF_LOG</p>
         </footer>
       </article>

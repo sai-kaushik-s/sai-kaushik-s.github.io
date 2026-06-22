@@ -39,6 +39,9 @@ export const projectsData = [
     title: "VLIW Processor Simulator",
     description: "32-bit 5-stage pipelined VLIW processor simulation with a custom assembly parser, register file monitoring, and pipeline hazard detection — implemented in Python/Verilog.",
     tags: ["Python", "Verilog", "Computer Architecture"],
+    collaborators: [
+      { name: "Samarth Sudarshan Inamdar ↗", linkedin: "https://www.linkedin.com/in/samarth-inamdar/" }
+    ],
     links: [
       { url: "https://github.com/sai-kaushik-s/VLIW-Architecture", label: "Source code ↗" }
     ]

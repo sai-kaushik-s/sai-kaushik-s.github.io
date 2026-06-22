@@ -40,35 +40,36 @@ const images = import.meta.glob('/src/data/blogs/**/*.{jpg,jpeg,png,webp,gif}', 
                   href={`/blogs/${blog.slug}`} 
                   class={`tl-content glass ${themeColor} glass-hover`} 
                   data-astro-prefetch
-                  style="display: block; text-decoration: none;"
                 >
-                  <div class="tl-meta" style="margin-bottom: var(--space-md);">
-                    <span class="tl-date">{blog.date}</span>
-                  </div>
+                  <div class={finalImage ? "tl-blog-grid" : ""}>
+                    {finalImage && (
+                      <div class="tl-blog-image-wrapper">
+                        <img src={finalImage} alt={blog.title} class="tl-blog-image" />
+                      </div>
+                    )}
+                    <div class="tl-blog-info">
+                      <div class="tl-meta">
+                        <span class="tl-date">{blog.date}</span>
+                      </div>
 
-                  <h3 class="tl-title">{blog.title}</h3>
-                  
-                  {/* Conditionally render image inside the timeline flow */}
-                  {finalImage && (
-                    <div style="margin: var(--space-md) 0; border: 1px solid var(--border-dim); border-radius: 2px; overflow: hidden;">
-                      <img src={finalImage} alt={blog.title} style="width: 100%; height: auto; display: block; filter: grayscale(20%); transition: filter var(--t-fast);" />
+                      <h3 class="tl-title">{blog.title}</h3>
+
+                      <p class="tl-desc">
+                        {blog.excerpt}
+                      </p>
+
+                      <div class="tl-tech">
+                        {blog.tags.map(tag => (
+                          <span class={`badge badge-${themeColor}`}>{tag}</span>
+                        ))}
+                      </div>
+
+                      <div class="tl-links">
+                        <span class={`btn-ghost ${themeColor}`} style="padding: 0.4em 0.8em; font-size: 0.75rem;">
+                          READ_ENTRY ->
+                        </span>
+                      </div>
                     </div>
-                  )}
-
-                  <p class="tl-desc" style="margin-bottom: var(--space-md);">
-                    {blog.excerpt}
-                  </p>
-
-                  <div class="tl-tech">
-                    {blog.tags.map(tag => (
-                      <span class={`badge badge-${themeColor}`}>{tag}</span>
-                    ))}
-                  </div>
-
-                  <div class="tl-links" style="margin-top: var(--space-lg);">
-                    <span class={`btn-ghost ${themeColor}`} style="padding: 0.4em 0.8em; font-size: 0.75rem;">
-                      READ_ENTRY ->
-                    </span>
                   </div>
                 </a>
               </div>
