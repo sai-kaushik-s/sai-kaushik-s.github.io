@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /untitled
+
+Sitemap: https://sai-kaushik-s.com/sitemap.xml
